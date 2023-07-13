@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Einkommen</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="calculation_kita_fee.js"></script>
+    <script src="bar_chart.js"></script>
+  </head>
+  <body>
+    <form
+      method="post"
+      class="form-calculation"
+      onsubmit="setTimeout(function(){window.location.reload();},10);"
+    >
+      <div class="form-calculation">
+        <label>Bruttoeinkommen im Monat beider Elternteile: </label>
+        <input
+          type="radio"
+          id="bruttoLess"
+          name="bruttoIncome"
+          value="2999"
+          checked
+        />
+        <label for="bruttoLess">weniger als 3000 €</label>
+        <input type="radio" id="bruttoMore" name="bruttoIncome" value="3000" />
+        <label for="bruttoMore">mehr oder genau 3000 €</label>
+      </div>
+      <div class="form-calculation">
+        <label>Anzahl Kinder in selber Kita: </label>
+        <input
+          type="radio"
+          id="children0"
+          name="numberChildrenInSameKita"
+          value="0"
+          checked
+        />
+        <label for="children0">0</label>
+        <input
+          type="radio"
+          id="children1"
+          name="numberChildrenInSameKita"
+          value="1"
+        />
+        <label for="children0">1</label>
+        <input
+          type="radio"
+          id="children2"
+          name="numberChildrenInSameKita"
+          value="2"
+        />
+        <label for="children2">2</label>
+        <input
+          type="radio"
+          id="children3"
+          name="numberChildrenInSameKita"
+          value="3"
+        />
+        <label for="children3">+3</label>
+      </div>
+    </form>
+    <svg width="600" height="500"></svg>
+    <script src="update_chart.js"></script>
+  </body>
+</html>
